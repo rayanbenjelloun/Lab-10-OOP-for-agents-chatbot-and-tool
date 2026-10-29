@@ -1,0 +1,4 @@
+
+## Soccer Academy Assistant
+
+My assistant helps soccer players and parents check training schedules for different age groups. It uses a separate tool to look up training days and times for U12, U15, and U18 players. The assistant is a mock because it uses simple keyword rules and made-up schedules instead of real AI or live academy information. Requests to register, make payments, or cancel are passed to a human because they require staff assistance. If the assistant used real customer data, one risk would be exposing private information because the program does not have security measures to protect that information.
