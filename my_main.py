@@ -3,6 +3,16 @@
 
 from my_assistant import SoccerAssistant
 from my_tool import TrainingSchedule
+from ollama_model import OllamaModel
+
+MODEL_NAME = "granite4.1:3b"
+
+INSTRUCTIONS = """You are CoachBot, a support assistant for the Soccer Academy.
+Answer in one short sentence.
+The academy is located at 100 Soccer Lane.
+Players should bring cleats, shin guards, and a water bottle.
+Only state facts that appear in these instructions.
+If you do not know, say you do not know and offer to pass the customer to a staff member."""
 
 SESSIONS = {
     "u12": "Monday at 5 PM",
@@ -11,8 +21,9 @@ SESSIONS = {
 }
 
 training_tool = TrainingSchedule(SESSIONS)
+model = OllamaModel(MODEL_NAME)
 
-bot = SoccerAssistant("CoachBot", training_tool)
+bot = SoccerAssistant("CoachBot", INSTRUCTIONS, training_tool, model)
 
 print("Welcome to the Soccer Academy!")
 print("Type a message, or type quit to stop.")
